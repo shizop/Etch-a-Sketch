@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fcfafa;
+}
+
+.buttons .changeGrid {
+  background: #f0d78c;
+}
+
+.buttons .randomColor {
+  background: #64c4ed;
+}
+
+.container {
+  border: 2px solid #4f81c7;
+  width: 600px;
+  height: 600px;
+  display: grid;
+}
