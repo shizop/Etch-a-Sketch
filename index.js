@@ -18,7 +18,16 @@ function createContainer(size) {
 
   for (let i = 0; i < numDivs; i++) {
     let div = document.createElement("div");
-    div.addEventListener("mouseover", colorDiv);
+    let opacity = 0;
+    div.addEventListener("mouseover", () => {
+      if (color === "random") {
+        div.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      } else {
+        div.style.backgroundColor = "black";
+      }
+      opacity += 0.3;
+      div.style.opacity = opacity.toString();
+    });
     container.insertAdjacentElement("beforeend", div);
   }
 }
@@ -31,14 +40,6 @@ function getSize() {
     return inputSize;
   } else {
     alert("Please enter a number between 0 and 100");
-  }
-}
-
-function colorDiv() {
-  if (color === "random") {
-    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-  } else {
-    this.style.backgroundColor = "black";
   }
 }
 
