@@ -17,10 +17,14 @@
     <h1 class="mb-4">Etch-a-Sketch</h1>
 
     <div class="buttons mb-3">
-      <button class="btn changeGrid">Change grid size</button>
-      <button class="btn randomColor">Random color</button>
-      <button class="btn btn-dark">Black color</button>
-      <button class="btn btn-danger">Reset</button>
+      <button class="btn changeGrid" id="resizeGrid">Change grid size</button>
+      <button class="btn randomColor" onclick="setColor('random')">
+        Random color
+      </button>
+      <button class="btn btn-dark" onclick="setColor('black')">
+        Black color
+      </button>
+      <button class="btn btn-danger" onclick="reset()">Reset</button>
     </div>
     <div class="container"></div>
 
