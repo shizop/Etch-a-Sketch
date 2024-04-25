@@ -1,7 +1,15 @@
 let color = "black";
+let click = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   createContainer(16);
+
+  document.querySelector("body").addEventListener("click", (e) => {
+    if (e.target.tagName != "BUTTON") {
+      click = !click;
+    }
+  });
+
   let resizeGridButton = document.querySelector("#resizeGrid");
   resizeGridButton.addEventListener("click", () => {
     let size = getSize();
@@ -20,10 +28,12 @@ function createContainer(size) {
     let div = document.createElement("div");
     let opacity = 0;
     div.addEventListener("mouseover", () => {
-      if (color === "random") {
-        div.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-      } else {
-        div.style.backgroundColor = "black";
+      if (click) {
+        if (color === "random") {
+          div.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else {
+          div.style.backgroundColor = "black";
+        }
       }
       opacity += 0.3;
       div.style.opacity = opacity.toString();
